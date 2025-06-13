@@ -11,20 +11,14 @@ auth api - nodejs
 Follow the steps below to run the application locally:
 
 
-### Authentication API (Starts up in PORT 3001)
-1. Navigate to the `authentication` directory (if you're not already there):
-
-    ```bash
-    cd src/API/authentication
-    ```
-
-2. Install the required dependencies:
+### Authentication API (Starts up in PORT 5000)
+1. Install the required dependencies:
 
     ```bash
     npm install
     ```
 
-3. Setup the environment variables
+2. Setup the environment variables
 
     3.1. create a file called '.env'
 
@@ -38,7 +32,7 @@ Follow the steps below to run the application locally:
     ```
 
     ATLAS_URI IS found on mongodb site when you create a new project
-    
+
 3. Start the local development server:
 
    ```bash
