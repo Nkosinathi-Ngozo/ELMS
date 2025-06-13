@@ -31,8 +31,14 @@ Follow the steps below to run the application locally:
     3.2. Add these values below (These values will be used only in the dev environment)
 
     ```bash
-    
+    PORT = 5000
+    ATLAS_URI = ""
+    MONGO_URI = ""
+    JWT_SEC = ""
     ```
+
+    ATLAS_URI IS found on mongodb site when you create a new project
+    
 3. Start the local development server:
 
    ```bash
