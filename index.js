@@ -15,10 +15,13 @@ connectDB()
 
 const authRoute = require('./routes/authRoutes');
 const userRoute = require('./routes/userRoutes');
+const leaseRoute = require('./routes/leaseRoutes');
 
 
 app.use(`${urlprefix}/auth`, authRoute);
 app.use(`${urlprefix}/user`, userRoute);
+app.use(`${urlprefix}/lease`, leaseRoute);
+
 
 
 app.listen(PORT, () =>{
