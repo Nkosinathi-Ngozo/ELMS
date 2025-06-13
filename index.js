@@ -16,11 +16,13 @@ connectDB()
 const authRoute = require('./routes/authRoutes');
 const userRoute = require('./routes/userRoutes');
 const leaseRoute = require('./routes/leaseRoutes');
+const paymentRoute = require('./routes/paymentRoutes');
 
 
 app.use(`${urlprefix}/auth`, authRoute);
 app.use(`${urlprefix}/user`, userRoute);
 app.use(`${urlprefix}/lease`, leaseRoute);
+app.use(`${urlprefix}/payment`, paymentRoute);
 
 
 

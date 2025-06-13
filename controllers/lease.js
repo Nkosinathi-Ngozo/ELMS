@@ -14,18 +14,6 @@ const leaseController = {
         
     },
 
-    async getLeaseByEmail(req, res) {
-        const { email } = req.body
-        try {
-            const lease = await leaseService.getLeaseByEmail(email);
-            res.status(200).json(lease);
-        } catch (error) {
-            console.error('Error getting lease:', error);
-            res.status(500).json({error})
-        }
-       
-    },
-
     async createLease(req, res) {
         
         try {

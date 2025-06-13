@@ -9,13 +9,6 @@ const leaseService = {
         return lease; // returns lease
     },
 
-    async getLeaseByEmail(email) {
-        const lease = await leaseModel.findOne({ email });
-
-        if (!lease) return null;
-        return lease; // returns lease
-    },
-
     async createLease(leaseData) {
         const newLease = new leaseModel(leaseData);
         await newLease.save();
