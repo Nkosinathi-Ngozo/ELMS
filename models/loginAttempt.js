@@ -4,13 +4,12 @@
 const mongoose = require('mongoose')
 
 const loginAttemptSchema = new mongoose.Schema({ 
-    accountNumber: {
-      type: String,
-      required: true,
-      immutable: true,
-      unique: true,
-      trim: true, 
-      match: [/^\d{10}$/, 'Account number must be a 10-digit number'] 
+    email: {
+        type: String,
+        required: true,
+        immutable: true,
+        unique: true,
+        match: [/^[\w\.-]+@[a-zA-Z\d\.-]+\.[a-zA-Z]{2,6}$/, 'Email is not valid']
     },
     ipAddress: {
       type: String,
