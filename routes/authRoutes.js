@@ -11,10 +11,4 @@ router.post("/register", authController.register);
 //! LOGIN
 router.post('/login', bruteForce.prevent, loginAttemptLogger, authController.login);
 
-//! LOGOUT 
-router.get('/logout', authController.logout);
-
-//! LOGOUT 
-router.get('/protected', verifyToken, authController.protected);
-
 module.exports = router;

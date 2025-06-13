@@ -2,6 +2,10 @@ const router = require('express').Router();
 const userController = require('../controllers/user')
 const { verifyToken, verifyAdmin } = require('../middleware/auth')
 
+//! CREATE USER
+
+router.post("/create", userController.createUser);
+
 //! UPDATE USER
 router.put("/:id", verifyToken, userController.updateUser);
 

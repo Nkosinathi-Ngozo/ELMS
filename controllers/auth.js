@@ -11,6 +11,8 @@ const authController = {
         console.log('Register');
   
         const {
+            firstName,
+            lastName,
             username, 
             email, 
             password
@@ -23,6 +25,8 @@ const authController = {
                 username: username,
                 email: email,
                 password: hashedPassword,
+                firstName: firstName,
+                lastName: lastName
             }
             const savedUser = await userService.createUser(newUser);
             
@@ -31,7 +35,7 @@ const authController = {
             const accessToken = jwt.sign(
                 {
                     id: user._id,
-                    isAdmin: user.isAdmin,
+                    role: user.role,
                 },
                 process.env.JWT_SEC,
                 {expiresIn:"3d"}
@@ -95,17 +99,6 @@ const authController = {
             res.status(500).json({ message: "Server error", error: error.message });
         }
     },
-    
-
-    async logout(req, res){
-        res.cookie('jwt', '', {
-            maxAge: 1
-        });
-    },
-
-    async protected(req, res){
-        res.json({ isAuthenticated: true, user: req.user });
-    }
 }
 
 module.exports = authController
