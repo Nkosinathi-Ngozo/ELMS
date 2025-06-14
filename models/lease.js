@@ -1,29 +1,41 @@
 const mongoose = require('mongoose');
 
 const LeaseSchema = new mongoose.Schema({
-  tenant: {
+  propertyName: {
     type: String,
     required: true
   },
-  property: {
+  mission: {
     type: String,
     required: true
   },
-  startDate: {
-    type: Date,
+  leasePeriod: {
+    startDate: {
+      type: Date,
+      required: true
+    },
+    endDate: {
+      type: Date,
+      required: true
+    }
+  },
+  currency: {
+    type: String,
+    required: true, // e.g., "ZAR", "USD"
+    enum: ['ZAR', 'USD'], // update this list as needed
+    default: 'ZAR',
+  },
+  escalationTerms: {
+    type: String, // or a more complex object if needed
     required: true
   },
-  endDate: {
-    type: Date,
-    required: true
-  },
-  rent: {
-    type: Number,
-    required: true
+  renewalDates: {
+    type: [Date],
+    default: []
   },
   status: {
     type: String,
-    enum: ['Active', 'Pending', 'Terminated', 'Expired'], // you can adjust these
+    enum: ['Active', 'Pending', 'Terminated', 'Expired'],
     required: true
   },
   lastModifiedBy: {

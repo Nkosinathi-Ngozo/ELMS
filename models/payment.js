@@ -1,6 +1,11 @@
 const mongoose = require('mongoose');
 
 const PaymentSchema = new mongoose.Schema({
+  leaseId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Lease',
+    required: true
+  },
   amount: {
     type: Number,
     required: true
@@ -11,13 +16,13 @@ const PaymentSchema = new mongoose.Schema({
   },
   paymentMethod: {
     type: String,
-    enum: ['bank_transfer', 'cash', 'credit_card', 'mobile_money'], // Add other methods you support
+    enum: ['bank_transfer', 'cash', 'credit card', 'mobile money'], 
     default: 'bank_transfer',
     required: true
   },
   status: {
     type: String,
-    enum: ['pending', 'completed', 'failed'], // Adjust based on your app logic
+    enum: ['pending', 'completed', 'failed'], 
     default: 'pending',
     required: true
   },

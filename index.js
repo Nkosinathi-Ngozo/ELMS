@@ -17,6 +17,7 @@ const leaseRoute = require('./routes/leaseRoutes');
 const paymentRoute = require('./routes/paymentRoutes');
 const mainRoute = require('./routes/mainRoutes');
 
+
 app.use(`${urlprefix}/auth`, authRoute);
 app.use(`${urlprefix}/user`, userRoute);
 app.use(`${urlprefix}/lease`, leaseRoute);
